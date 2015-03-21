@@ -3,6 +3,8 @@
 Running load tests with **Gatling 2.1.4** on a **t2.small** instance
 Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.large** instance
 
+Each scenario was run at least twice. The results are of the first run, and the second run was to prove the results are consistent.
+
 ### 90000 requests over 30 seconds
 
 #### Servlet BIO
@@ -41,7 +43,8 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > failed                                               257 (  0%)
 ```
 
-#### NodeJS
+#### Node.js
+(Node.js just crashes here)
 ```
 ---- Global Information --------------------------------------------------------
 > request count                                      90000 (OK=20368  KO=69632 )
@@ -97,7 +100,7 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > failed                                                 0 (  0%)
 ```
 
-#### NodeJS
+#### Node.js
 ```
 ---- Global Information --------------------------------------------------------
 > request count                                      60000 (OK=59690  KO=310   )
@@ -153,7 +156,7 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > failed                                                 0 (  0%)
 ```
 
-#### NodeJS
+#### Node.js
 ```
 ---- Global Information --------------------------------------------------------
 > request count                                      52500 (OK=52500  KO=0     )
