@@ -1,6 +1,6 @@
 ## Results of a non-blocking vs blocking benchmark
 
-Running load tests with **Gatling 2.1.4** on a **t2.small** instance
+Running load tests with **Gatling 2.1.4** on a **t2.small** instance  
 Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.large** instance
 
 Each scenario was run at least twice. The results are of the first run, and the second run was to prove the results are consistent.
