@@ -38,6 +38,6 @@ class AsyncTestSimulation extends Simulation {
 		}
 		.pause(0 milliseconds, 100 milliseconds)
 
-	setUp(scn.inject(rampUsers(6000) over (30 seconds)))
+	setUp(scn.inject(rampUsers(3500) over (30 seconds)))
 		.protocols(httpProtocol)
 }
