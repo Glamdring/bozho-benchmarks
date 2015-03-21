@@ -28,7 +28,7 @@
 
   <Service name="Catalina">
 
-    <Connector connectionTimeout="20000" port="9966" protocol="HTTP/1.1" maxThreads="2000" />
+    <Connector connectionTimeout="20000" port="9966" protocol="HTTP/1.1" maxThreads="4000" />
     <Engine defaultHost="localhost" name="Catalina">
       <Host appBase="webapps" autoDeploy="true" name="localhost" deployXML="false" unpackWARs="true">
         <Context path=""  docBase="../../servlet-demo" />
