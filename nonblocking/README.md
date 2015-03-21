@@ -5,6 +5,8 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 
 Each scenario was run at least twice. The results are of the first run, and the second run was to prove the results are consistent.
 
+Load test scenario is in the "simulations" directory. Node.js and Servlet code is in the "code" directory.
+
 ### 90000 requests over 30 seconds
 
 #### Servlet BIO
