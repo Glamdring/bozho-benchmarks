@@ -3,7 +3,7 @@
 The benchmarked scenario is: reading a 43kb file and writing it to the output stream.
 
 Running load tests with **Gatling 2.1.4** on a **t2.small** instance  
-Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.large** instance
+Running **Embedded Tomcat 7 (with Java 7)**, ``maxThreads=4000`` and **Node.js v0.12.0** on a **m3.large** instance
 
 Each scenario was run at least twice. The results are of the first run, and the second run was to prove the results are consistent.
 
