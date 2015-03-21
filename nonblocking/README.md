@@ -62,7 +62,7 @@ Each scenario was run at least twice. The results are of the first run, and the 
 > failed                                             69632 ( 77%)
 ```
 
-### 60000 requests over 30 seconds:
+### 60000 requests over 30 seconds
 
 #### Servlet BIO
 ```

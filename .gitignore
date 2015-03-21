@@ -1,6 +1,6 @@
-async/code/servlet/.classpath
-async/code/servlet/.project
-async/code/servlet/.settings/.jsdtscope
-async/code/servlet/.settings/
-async/code/servlet/bin/
-async/code/servlet/target/
+nonblocking/code/servlet/.classpath
+nonblocking/code/servlet/.project
+nonblocking/code/servlet/.settings/.jsdtscope
+nonblocking/code/servlet/.settings/
+nonblocking/code/servlet/bin/
+nonblocking/code/servlet/target/

@@ -6,7 +6,7 @@ import io.gatling.jdbc.Predef._
 import io.gatling.http.HeaderNames._
 import scala.concurrent.duration._
 
-class AsyncTestSimulation extends Simulation {
+class NonBlockingTestSimulation extends Simulation {
 
 	val httpProtocol = http
 		.baseURL("http://54.225.157.124:9966")
@@ -18,15 +18,6 @@ class AsyncTestSimulation extends Simulation {
 
 	val headers_1 = Map(
 		"Keep-Alive" -> "115")
-
-	val headers_3 = Map(
-		"Keep-Alive" -> "115",
-		"Content-Type" -> "application/x-www-form-urlencoded")
-
-	val headers_6 = Map(
-		"Accept" -> "application/json, text/javascript, */*; q=0.01",
-		"Keep-Alive" -> "115",
-		"X-Requested-With" -> "XMLHttpRequest")
 
 	val scn = scenario("Simple")
 		.repeat(15) {
