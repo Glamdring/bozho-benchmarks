@@ -3,15 +3,13 @@ package basic
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.jdbc.Predef._
-import io.gatling.http.Headers.Names._
+import io.gatling.http.HeaderNames._
 import scala.concurrent.duration._
-import bootstrap._
-import assertions._
 
-class NodeJSTestSimulation extends Simulation {
+class AsyncTestSimulation extends Simulation {
 
 	val httpProtocol = http
-		.baseURL("http://localhost:1337")
+		.baseURL("http://54.225.157.124:9966")
 		.acceptCharsetHeader("ISO-8859-1,utf-8;q=0.7,*;q=0.7")
 		.acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
 		.acceptEncodingHeader("gzip, deflate")
@@ -40,6 +38,6 @@ class NodeJSTestSimulation extends Simulation {
 		}
 		.pause(0 milliseconds, 100 milliseconds)
 
-	setUp(scn.inject(ramp(6000 users) over (30 seconds)))
+	setUp(scn.inject(rampUsers(6000) over (30 seconds)))
 		.protocols(httpProtocol)
 }
