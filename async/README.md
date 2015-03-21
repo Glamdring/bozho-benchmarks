@@ -5,7 +5,8 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 
 ### 90000 requests over 30 seconds
 
-#### Servlet BIO:
+#### Servlet BIO
+```
 ---- Global Information --------------------------------------------------------
 > request count                                      90000 (OK=89101  KO=899   )
 > min response time                                      0 (OK=3      KO=0     )
@@ -20,9 +21,10 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > 800 ms < t < 1200 ms                               13907 ( 15%)
 > t > 1200 ms                                        53854 ( 60%)
 > failed                                               899 (  1%)
+```
 
-
-#### Servlet NIO:
+#### Servlet NIO
+```
 ---- Global Information --------------------------------------------------------
 > request count                                      90000 (OK=89743  KO=257   )
 > min response time                                      0 (OK=3      KO=0     )
@@ -37,9 +39,10 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > 800 ms < t < 1200 ms                               10702 ( 12%)
 > t > 1200 ms                                        50183 ( 56%)
 > failed                                               257 (  0%)
+```
 
-
-#### NodeJS:
+#### NodeJS
+```
 ---- Global Information --------------------------------------------------------
 > request count                                      90000 (OK=20368  KO=69632 )
 > min response time                                      1 (OK=6      KO=1     )
@@ -54,11 +57,12 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > 800 ms < t < 1200 ms                                1369 (  2%)
 > t > 1200 ms                                         7256 (  8%)
 > failed                                             69632 ( 77%)
-
+```
 
 ### 60000 requests over 30 seconds:
 
-#### Servlet BIO:
+#### Servlet BIO
+```
 ---- Global Information --------------------------------------------------------
 > request count                                      60000 (OK=60000  KO=0     )
 > min response time                                      6 (OK=6      KO=-     )
@@ -73,8 +77,10 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > 800 ms < t < 1200 ms                               17210 ( 29%)
 > t > 1200 ms                                        24471 ( 41%)
 > failed                                                 0 (  0%)
+```
 
-#### Servlet NIO:
+#### Servlet NIO
+```
 ---- Global Information --------------------------------------------------------
 > request count                                      60000 (OK=60000  KO=0     )
 > min response time                                      5 (OK=5      KO=-     )
@@ -89,9 +95,10 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > 800 ms < t < 1200 ms                               17905 ( 30%)
 > t > 1200 ms                                        22494 ( 37%)
 > failed                                                 0 (  0%)
+```
 
-
-#### NodeJS:
+#### NodeJS
+```
 ---- Global Information --------------------------------------------------------
 > request count                                      60000 (OK=59690  KO=310   )
 > min response time                                      5 (OK=5      KO=560   )
@@ -106,14 +113,12 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > 800 ms < t < 1200 ms                                8065 ( 13%)
 > t > 1200 ms                                        29015 ( 48%)
 > failed                                               310 (  1%)
-
-
-=======================================================
-
+```
 
 ### 52500 requests over 30 seconds
 
-#### Servlet BIO:
+#### Servlet BIO
+```
 ---- Global Information --------------------------------------------------------
 > request count                                      52500 (OK=52500  KO=0     )
 > min response time                                      5 (OK=5      KO=-     )
@@ -128,9 +133,10 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > 800 ms < t < 1200 ms                               24817 ( 47%)
 > t > 1200 ms                                         4490 (  9%)
 > failed                                                 0 (  0%)
+```
 
-
-#### Servlet NIO:
+#### Servlet NIO
+```
 ---- Global Information --------------------------------------------------------
 > request count                                      52500 (OK=52500  KO=0     )
 > min response time                                      6 (OK=6      KO=-     )
@@ -145,9 +151,10 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > 800 ms < t < 1200 ms                               28725 ( 55%)
 > t > 1200 ms                                         3068 (  6%)
 > failed                                                 0 (  0%)
+```
 
-
-#### NodeJS:
+#### NodeJS
+```
 ---- Global Information --------------------------------------------------------
 > request count                                      52500 (OK=52500  KO=0     )
 > min response time                                      5 (OK=5      KO=-     )
@@ -162,3 +169,4 @@ Running **Embedded Tomcat 7 (with Java 7)** and **Node.js v0.12.0** on a **m3.la
 > 800 ms < t < 1200 ms                               15701 ( 30%)
 > t > 1200 ms                                        11016 ( 21%)
 > failed                                                 0 (  0%)
+```
