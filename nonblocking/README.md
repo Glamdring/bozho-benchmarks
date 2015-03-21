@@ -46,7 +46,7 @@ Load test scenario is in the "simulations" directory. Node.js and Servlet code i
 ```
 
 #### Node.js
-(Node.js just crashes here)
+(Node.js crashes here every time)
 ```
 ---- Global Information --------------------------------------------------------
 > request count                                      90000 (OK=20368  KO=69632 )
