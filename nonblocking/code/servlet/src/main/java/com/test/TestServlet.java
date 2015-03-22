@@ -16,10 +16,23 @@ public class TestServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
+    private boolean readInMemory;
+    
+    @Override
+    public void init() throws ServletException {
+        readInMemory = System.getProperty("readInMemory") != null;
+        super.init();
+    }
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
         resp.setContentType("text/html");
-        IOUtils.copy(new BufferedInputStream(req.getServletContext().getResourceAsStream("/largefile")), resp.getOutputStream());
+        if (readInMemory) {
+            String content = IOUtils.toString(new BufferedInputStream(req.getServletContext().getResourceAsStream("/largefile")));
+            IOUtils.write(content, resp.getOutputStream());
+        } else {
+            IOUtils.copy(new BufferedInputStream(req.getServletContext().getResourceAsStream("/largefile")), resp.getOutputStream());
+        }
     }
 }
