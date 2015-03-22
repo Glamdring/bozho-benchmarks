@@ -7,6 +7,7 @@
 - add node to PATH
 - download maven
 - add maven to PATH
+- install sbt (http://www.scala-sbt.org/release/tutorial/Installing-sbt-on-Linux.html)
 - "too many open files"
 - checkout project
 - run
