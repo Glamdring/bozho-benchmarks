@@ -16,7 +16,8 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "io.spray"            %   "spray-can"         % "1.3.1",
   "io.spray"            %   "spray-routing"     % "1.3.1",
-  "org.slf4j"           %   "slf4j-simple"      % "1.7.2"
+  "org.slf4j"           %   "slf4j-simple"      % "1.7.2",
+  "com.typesafe.akka" 	%%  "akka-actor" 		% "2.3.9"
 )
 
 seq(Revolver.settings: _*)
