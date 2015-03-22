@@ -1,14 +1,40 @@
-## Results of a non-blocking vs blocking benchmark
+## Non-blocking vs blocking benchmark (Node.js, Servlets, Spray)
 
 The benchmarked scenario is: reading a 43kb file and writing it to the output stream.
 
 Running load tests with **Gatling 2.1.4** on a **t2.small** instance  
-Running **Embedded Tomcat 7 (with Java 7)**, ``maxThreads=4000`` and **Node.js v0.12.0** on a **m3.large** instance  
-For the servlet tets ``readInMemory`` was set to true, so that the file is first fully read in memory and then sent to the browser (if it's not set, it's faster)
+Running **Embedded Tomcat 7 (with Java 7)**, ``maxThreads=4000``, **Node.js v0.12.0** and **Spray 1.3.1** on a **m3.large** instance  
+(For the servlet tets ``readInMemory`` was set to true, so that the file is first fully read in memory and then sent to the browser (if it's not set, it's faster))
 
 Each scenario was run at least twice. The results are of the first run, and the second run was to prove the results are consistent.
 
-Load test scenario is in the "simulations" directory. Node.js and Servlet code is in the "code" directory.
+Load test scenario is in the "simulations" directory. Node.js, Servlet and Spray code is in the "code" directory.
+
+## Results
+
+
+### 120000 requests over 30 seconds
+
+| Scenario    :| Mean response time:| Mean req/sec:| Std deviation:| Resp. time Q2:| Resp. time Q3:| t < 800 ms :| 800 ms < t < 1200 ms:| t > 1200 ms :| failed   :|
+|--------------|--------------------|--------------|---------------|---------------|---------------|-------------|----------------------|--------------|-----------|
+| Servlet BIO  | 4113               | 841.019      | 6878          | 2281          | 4008          | 18961 (16%) | 9363 (8%)            | 89545 (75%)  | 2131 (2%) |
+| Servlet NIO  | 4673               | 995.198      | 3928          | 4062          | 6131          | 11188 (9%)  | 5195 (4%)            | 103060 (86%) | 557 (0%)  |
+| Node.js      | 4131               | 1136.342     | 3469          | 3809          | 5613          | 18349 (15%) | 6073 (5%)            | 95568 (80%)  | 10 (0%)   |
+| Node.js sync | 6908               | 825.764      | 5658          | 6189          | 9904          | 11806 (10%) | 6576 (5%)            | 101558 (85%) | 60 (0%)   |
+| Spray        | 6817               | 815.417      | 5908          | 5978          | 9552          | 12693 (11%) | 6462 (5%)            | 100655 (84%) | 190 (0%)  |
+
+### 90000 requests over 30 seconds
+
+| Scenario    :| Mean response time:| Mean req/sec:| Std deviation:| Resp. time Q2:| Resp. time Q3:| t < 800 ms :| 800 ms < t < 1200 ms:| t > 1200 ms :| failed   :|
+|--------------|--------------------|--------------|---------------|---------------|---------------|-------------|----------------------|--------------|-----------|
+| Servlet BIO  | 2999               | 724.364      | 4895          | 1656          | 2865          | 16453 (18%) | 12673 (14%)          | 59858 (67%)  | 1016 (1%) |
+| Servlet NIO  | 2893               | 1035.542     | 2195          | 2879          | 3986          | 21150 (24%) | 1668 (2%)            | 67159 (75%)  | 23 (0%)   |
+| Node.js      | 3024               | 1189.532     | 2049          | 2751          | 4039          | 12896 (14%) | 3026 (3%)            | 74078 (82%)  | 0 (0%)    |
+| Node.js sync | 3103               | 884.304      | 2122          | 3150          | 4394          | 18623 (21%) | 2906 (3%)            | 68471 (76%)  | 0 (0%)    |
+| Spray        | 3524               | 944.099      | 3809          | 2277          | 5232          | 20446 (23%) | 8500 (9%)            | 60992 (68%)  | 62 (0%)   |
+
+
+## Raw data
 
 ### 120000 requests over 30 seconds
 
