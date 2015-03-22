@@ -1,6 +1,7 @@
 package com.test;
 
 import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -29,10 +30,10 @@ public class TestServlet extends HttpServlet {
             IOException {
         resp.setContentType("text/html");
         if (readInMemory) {
-            String content = IOUtils.toString(new BufferedInputStream(req.getServletContext().getResourceAsStream("/largefile")));
+            String content = IOUtils.toString(new BufferedInputStream(new FileInputStream(req.getServletContext().getRealPath("/largefile"))));
             IOUtils.write(content, resp.getOutputStream());
         } else {
-            IOUtils.copy(new BufferedInputStream(req.getServletContext().getResourceAsStream("/largefile")), resp.getOutputStream());
+            IOUtils.copy(new BufferedInputStream(new FileInputStream(req.getServletContext().getRealPath("/largefile"))), resp.getOutputStream());
         }
     }
 }
