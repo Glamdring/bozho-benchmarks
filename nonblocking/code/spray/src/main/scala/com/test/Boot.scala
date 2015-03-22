@@ -9,7 +9,7 @@ object Boot extends App with SimpleRoutingApp {
 
   implicit val system = ActorSystem("demo")
 
-  startServer(interface = "localhost", port = 9966) {
+  startServer(interface = "0.0.0.0", port = 9966) {
     path("read") {
       get {
 	    respondWithMediaType(`text/html`) {
