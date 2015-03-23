@@ -18,5 +18,6 @@
 - download gatling
 - fix "too many open files"
 - checkout project
-- delete scala file
+- delete spray class file (interferes with gatling)
+- change the IP in the simulation file to point to the right application node
 - run
